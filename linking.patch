@@ -1,0 +1,13 @@
+diff --git a/common/include/plugin.mak b/common/include/plugin.mak
+index 632b1e4..3aeb2e5 100644
+--- a/common/include/plugin.mak
++++ b/common/include/plugin.mak
+@@ -16,7 +16,7 @@ DEST_INST_DIR = $(INST_DIR)
+ all: $(LIB_NAME)
+ 
+ $(LIB_NAME): $(OBJECTS)
+-	$(CC) -shared $(LDFLAGS) -o $(LIB_NAME) $(OBJECTS) $(LDLIBS)
++	$(CC) -shared $(LDFLAGS) -o $(LIB_NAME) $(OBJECTS) $(LDLIBS) -L../../../libcwiid -lcwiid -lm
+ 
+ install: $(LIB_NAME)
+ 	install -D $(LIB_NAME) $(DEST_INST_DIR)/$(LIB_NAME)

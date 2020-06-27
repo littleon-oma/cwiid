@@ -1,0 +1,3 @@
+# specify the bluetooth address of the wiimote to configure use this specific device
+# you can find it with "hcitool scan"
+WIIMOTE=""

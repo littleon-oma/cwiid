@@ -1,0 +1,14 @@
+[Unit]
+Description=WiiMote Service
+After=bluetooth.target
+
+[Install]
+WantedBy=bluetooth.target
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/sysconfig/cwiid
+ExecStart=/usr/bin/wminput -d $WIIMOTE
+Restart=always
+StartLimitBurst=50
+
